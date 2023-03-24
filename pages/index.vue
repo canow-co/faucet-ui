@@ -55,8 +55,8 @@
         </v-tooltip>
       </v-stepper-step>
 
-      <v-stepper-content :step="2">
-        <v-form ref="form" v-model="valid">
+      <v-stepper-content :step="2" :complete="step > 2" class="stepiconfont">
+        <v-form @submit.prevent="handle_submit">
           <v-col cols="12">
             <v-card class="mb-12 col-auto" color="lighten-1">
               <v-text-field
@@ -69,11 +69,11 @@
               />
             </v-card>
             <v-btn
-              :disabled="!valid"
-              @click="validate"
+              type="submit"
               depressed
               color="primary"
               class="d-block mx-auto"
+              :loading="loading"
               >Continue
             </v-btn>
           </v-col>
@@ -81,36 +81,6 @@
       </v-stepper-content>
 
       <v-divider></v-divider>
-
-      <v-stepper-step step="3" :complete="step > 3" class="stepiconfont">
-        Verification Challenge
-        <v-tooltip top close-delay="2000">
-          <template v-slot:activator="{ on, attrs }">
-            <v-icon v-bind="attrs" v-on="on" small>
-              mdi-information-outline
-            </v-icon>
-          </template>
-          <span
-            >Complete the reCaptcha.<br />
-            Once you have completed this we'll send you a notification with
-            confirmation your tokens have been sent.</span
-          >
-        </v-tooltip>
-      </v-stepper-step>
-
-      <v-stepper-content :step="3">
-        <v-form @submit.prevent="handle_submit">
-          <recaptcha />
-          <v-btn
-            type="submit"
-            depressed
-            color="primary"
-            class="d-block mx-auto"
-            :loading="loading"
-            >Continue
-          </v-btn>
-        </v-form>
-      </v-stepper-content>
     </v-stepper>
     <v-alert
       icon="mdi-shield-lock-outline"
@@ -219,15 +189,6 @@ export default {
     async handle_submit() {
       this.loading = !this.loading;
 
-      try {
-        await this.$recaptcha.getResponse();
-        await this.$recaptcha.reset();
-      } catch (error) {
-        this.loading = !this.loading;
-        this.error_recaptcha = true;
-        return this.handle_auto_dismiss("error_recaptcha");
-      }
-
       const status = await this.handle_fetch();
 
       this.loading = !this.loading;
@@ -261,9 +222,8 @@ export default {
 };
 </script>
 <style>
-
 .bgdarkopacity {
-  background: #f6f7f8!important;
+  background: #f6f7f8 !important;
 }
 
 div.g-recaptcha {
