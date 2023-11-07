@@ -16,7 +16,7 @@
           <p>
             If you are a developer looking to test the functionality of canowchain
             network or setting up a node on testnet, setting up a node on the
-            canowchain test network, you can acquire <b>test</b> CHEQ tokens through
+            canowchain test network, you can acquire <b>test</b> CANOWCHAIN tokens through
             this faucet.
           </p>
         </div>
