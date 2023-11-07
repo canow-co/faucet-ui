@@ -119,11 +119,11 @@ export default {
   data() {
     return {
       fixed: false,
-      title: "cheqd Testnet faucet",
+      title: "Canowchain Testnet faucet",
       faucet_status: "",
       faucet_status_color: "green",
-      items: ["cheqd-testnet-6"],
-      selected: "cheqd-testnet-6",
+      items: ["canowchain-testnet"],
+      selected: "canowchain-testnet",
       dialog: false,
     };
   },
