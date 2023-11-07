@@ -50,7 +50,7 @@
               target="_blank"
               >cheqd CLI guide on managing accounts (cheqd-noded keys list).</a
             ><br />
-            It should begin with "cheqd1".</span
+            It should begin with "canow1".</span
           >
         </v-tooltip>
       </v-stepper-step>
