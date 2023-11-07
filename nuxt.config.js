@@ -48,7 +48,7 @@ export default {
     [
       "@nuxtjs/recaptcha",
       {
-        siteKey: "6Lfvc08dAAAAAFYxguVoURPuBLzt6wXccJLmltI8",
+        siteKey: "6LfeSwApAAAAAANDWrVbS_z1pokjTBUsAoEJI_82",
         version: "v2",
       },
     ],
