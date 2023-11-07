@@ -122,8 +122,8 @@ export default {
       title: "Canowchain Testnet faucet",
       faucet_status: "",
       faucet_status_color: "green",
-      items: ["canowchain-testnet"],
-      selected: "canowchain-testnet",
+      items: ["canow-testnet-1"],
+      selected: "canow-testnet-1",
       dialog: false,
     };
   },
