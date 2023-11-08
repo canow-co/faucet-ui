@@ -26,7 +26,7 @@
                   <span style="margin-right: 3px">{{ faucet_status }}</span>
                   <v-tooltip top>
                     <template v-slot:activator="{ on, attrs }">
-                      <v-icon v-bind="attrs" v-on="on" small color="green">
+                      <v-icon v-bind="attrs" v-on="on" small :color="faucet_status_color">
                         mdi-circle
                       </v-icon>
                     </template>
@@ -71,7 +71,7 @@
                                   v-bind="attrs"
                                   v-on="on"
                                   small
-                                  color="green"
+                                  :color="faucet_status_color"
                                 >
                                   mdi-circle
                                 </v-icon>
@@ -119,11 +119,11 @@ export default {
   data() {
     return {
       fixed: false,
-      title: "cheqd Testnet faucet",
+      title: "Canowchain Testnet faucet",
       faucet_status: "",
       faucet_status_color: "green",
-      items: ["cheqd-testnet-6"],
-      selected: "cheqd-testnet-6",
+      items: ["canow-testnet-1"],
+      selected: "canow-testnet-1",
       dialog: false,
     };
   },

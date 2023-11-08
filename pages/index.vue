@@ -14,9 +14,9 @@
       <v-stepper-content :step="1">
         <div class="txtdts text-center">
           <p>
-            If you are a developer looking to test the functionality of cheqd
+            If you are a developer looking to test the functionality of canowchain
             network or setting up a node on testnet, setting up a node on the
-            cheqd test network, you can acquire <b>test</b> CHEQ tokens through
+            canowchain test network, you can acquire <b>test</b> CANOWCHAIN tokens through
             this faucet.
           </p>
         </div>
@@ -33,7 +33,7 @@
         :complete="step > 2"
         editable
       >
-        Add your cheqd <b>testnet</b> Address
+        Add your canowchain <b>testnet</b> Address
         <v-tooltip top close-delay="2000">
           <template v-slot:activator="{ on, attrs }">
             <v-icon v-bind="attrs" v-on="on" small>
@@ -41,7 +41,7 @@
             </v-icon>
           </template>
           <span
-            >Please enter your cheqd testnet wallet address which we'll use to
+            >Please enter your canowchain testnet wallet address which we'll use to
             transfer your test tokens.<br />
             To show the wallet address, follow the
             <a
@@ -50,7 +50,7 @@
               target="_blank"
               >cheqd CLI guide on managing accounts (cheqd-noded keys list).</a
             ><br />
-            It should begin with "cheqd1".</span
+            It should begin with "canow1".</span
           >
         </v-tooltip>
       </v-stepper-step>
@@ -61,7 +61,7 @@
             <v-card class="mb-12 col-auto" color="lighten-1">
               <v-text-field
                 v-model="address"
-                label="cheqd wallet Address"
+                label="canowchain wallet Address"
                 :hint="`Example: ${DEFAULT_TESTING_ADDRESS}`"
                 required
                 class="col-12"
